@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import TEXTS from "../../variables/texts";
 import pencil from "../../../assets/svg/pencil.svg";
 
 const SampleButton = ({ onClick }) => {
