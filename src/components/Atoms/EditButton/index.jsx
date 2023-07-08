@@ -20,7 +20,7 @@ const GrayCircle = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: rgb(184, 184, 184, 0);
+  background-color: rgba(184, 184, 184, 0);
   transition: all 0.2s ease;
 `;
 
@@ -34,13 +34,11 @@ const button = styled.button`
   outline: none;
   cursor: pointer;
   position: relative;
-  width: 20px;
-  height: 20px;
   background: none;
   padding: 0px;
   &:hover {
     ${GrayCircle} {
-      background-color: rgb(184, 184, 184, 0.2);
+      background-color: rgba(184, 184, 184, 0.2);
     }
   }
 `;
