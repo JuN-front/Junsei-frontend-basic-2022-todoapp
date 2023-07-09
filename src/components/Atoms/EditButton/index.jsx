@@ -36,8 +36,8 @@ const StyledButton = styled.button`
   position: relative;
   padding: 0px;
   background-color: transparent;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   &:hover {
     ${GrayCircle} {
       background-color: rgba(184, 184, 184, 0.2);
