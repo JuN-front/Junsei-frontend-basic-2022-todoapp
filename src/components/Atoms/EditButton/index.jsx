@@ -4,10 +4,10 @@ import pencil from "../../../assets/svg/pencil.svg";
 
 const SampleButton = ({ onClick }) => {
   return (
-    <button onClick={onClick}>
+    <StyledButton onClick={onClick}>
+      <GrayCircle />
       <img src={pencil}></img>
-      <GrayCircle></GrayCircle>
-    </button>
+    </StyledButton>
   );
 };
 
@@ -29,13 +29,15 @@ const img = styled.img`
   height: 100%;
 `;
 
-const button = styled.button`
+const StyledButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
   position: relative;
-  background: none;
   padding: 0px;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
   &:hover {
     ${GrayCircle} {
       background-color: rgba(184, 184, 184, 0.2);
