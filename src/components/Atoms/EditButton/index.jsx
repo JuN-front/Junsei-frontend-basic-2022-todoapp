@@ -24,11 +24,6 @@ const GrayCircle = styled.div`
   transition: all 0.2s ease;
 `;
 
-const img = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
 const StyledButton = styled.button`
   border: none;
   outline: none;
@@ -38,6 +33,12 @@ const StyledButton = styled.button`
   background-color: transparent;
   width: 20px;
   height: 20px;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+
   &:hover {
     ${GrayCircle} {
       background-color: rgba(184, 184, 184, 0.2);
