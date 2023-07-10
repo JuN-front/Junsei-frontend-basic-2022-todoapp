@@ -6,7 +6,7 @@ const SampleButton = ({ onClick }) => {
   return (
     <StyledButton onClick={onClick}>
       <GrayCircle />
-      <img src={pencil}></img>
+      <img pencil={pencil}></img>
     </StyledButton>
   );
 };
