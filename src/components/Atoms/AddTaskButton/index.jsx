@@ -7,9 +7,9 @@ import plus from "../../../assets/svg/plus.svg";
 const AddTaskButton = ({ onClick }) => {
   return (
     <StyledTaskButton onClick={onClick}>
-      <StyledGreenOval></StyledGreenOval>
+      <StyledGreenOval />
       <StyledTask>
-        <img src={plus}></img>
+        <img src={plus} />
         <StyledAddTask>タスクを追加</StyledAddTask>
       </StyledTask>
     </StyledTaskButton>
@@ -32,7 +32,7 @@ const StyledGreenOval = styled.div`
 const StyledAddTask = styled.div`
   color: ${COLOR.GREEN};
   ${TEXT.S};
-  margin-left: 10px;
+  gap: 10px;
   white-space: nowrap;
 `;
 
