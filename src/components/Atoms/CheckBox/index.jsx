@@ -6,7 +6,7 @@ import check from "../../../assets/svg/check.svg";
 const AddCheckBox = ({ onClick }) => {
   return (
     <StyledCheckBox onClick={onClick}>
-      <Styledcheck src={check}></Styledcheck>
+      <Styledcheck src={check} />
     </StyledCheckBox>
   );
 };
