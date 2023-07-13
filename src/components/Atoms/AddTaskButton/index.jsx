@@ -32,7 +32,6 @@ const StyledGreenOval = styled.div`
 const StyledAddTask = styled.div`
   color: ${COLOR.GREEN};
   ${TEXT.S};
-  gap: 10px;
   white-space: nowrap;
 `;
 
@@ -40,6 +39,7 @@ const StyledTask = styled.div`
   display: flex;
   align-items: center;
   padding: 2px 6px;
+  gap: 10px;
 `;
 
 const StyledTaskButton = styled.button`
@@ -49,7 +49,7 @@ const StyledTaskButton = styled.button`
   padding: 0px;
   position: relative;
   cursor: pointer;
-  & > img {
+  & img {
     width: 20px;
     height: 20px;
   }
