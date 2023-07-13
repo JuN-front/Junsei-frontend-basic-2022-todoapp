@@ -32,7 +32,6 @@ const StyledGreenOval = styled.div`
 const StyledAddTask = styled.div`
   color: ${COLOR.GREEN};
   ${TEXT.S};
-  line-height: 20px;
   margin-left: 10px;
   white-space: nowrap;
 `;
