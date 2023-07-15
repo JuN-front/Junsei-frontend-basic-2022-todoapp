@@ -26,7 +26,7 @@ const StyledCheckBox = styled.button`
   cursor: pointer;
   padding: 0px;
 
-  & > img {
+  & img {
     display: none;
     width: 100%;
     height: 100%;
