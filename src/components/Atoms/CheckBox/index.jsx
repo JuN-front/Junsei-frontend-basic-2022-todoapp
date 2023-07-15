@@ -26,15 +26,15 @@ const StyledCheckBox = styled.button`
   cursor: pointer;
   padding: 0px;
 
-  & img {
-    display: none;
-    width: 100%;
-    height: 100%;
-  }
-
   &:hover {
     ${StyledCheck} {
       display: block;
     }
   }
+`;
+
+const Styledcheck = styled.img`
+  display: none;
+  width: 100%;
+  height: 100%;
 `;
