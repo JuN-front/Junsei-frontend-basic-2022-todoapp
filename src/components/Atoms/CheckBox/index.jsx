@@ -14,7 +14,7 @@ const AddCheckBox = ({ onClick }) => {
 export default AddCheckBox;
 
 const StyledCheckBox = styled.button`
-  border: 2px solid ${COLOR.LIGHT_GRAY_TRANSLUCENT};
+  border: 2px solid ${COLOR.LIGHT_GRAY};
   border-radius: 2px;
   background: none;
   outline: none;
