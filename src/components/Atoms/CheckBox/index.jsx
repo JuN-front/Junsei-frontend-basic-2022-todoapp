@@ -27,7 +27,7 @@ const StyledCheckBox = styled.button`
   padding: 0px;
 
   &:hover {
-    ${Styledcheck} {
+    img {
       display: block;
     }
   }
