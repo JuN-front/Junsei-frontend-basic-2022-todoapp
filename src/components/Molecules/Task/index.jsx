@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
-import StyledCheckBoxWrapper from "../../Atoms/Checkbox/index";
-import Input from "../../Atoms/Input/index";
-import StyledEditButtonWrapper from "../../Atoms/EditButton/index";
+import StyledCheckBoxWrapper from "../../Atoms/Checkbox/index.jsx";
+import Input from "../../Atoms/Input/index.jsx";
+import StyledEditButtonWrapper from "../../Atoms/EditButton/index.jsx";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
 
