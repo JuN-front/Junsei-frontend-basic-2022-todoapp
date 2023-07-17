@@ -22,7 +22,7 @@ const InputSample = (props) => {
     }
   }, []);
 
-  return <StyledInput ref={inputRef} name="input" type="text"></StyledInput>;
+  return <StyledInput ref={inputRef} name="input" type="text" />;
 };
 
 export default InputSample;
