@@ -6,12 +6,7 @@ import StyledEditButtonWrapper from "../../Atoms/EditButton/index";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
 
-const TaskSample = ({
-  defaultValue,
-  defaultIsEditing,
-  OnTaskChange,
-  OnTaskComplete,
-}) => {
+const TaskSample = ({ defaultValue, defaultIsEditing, OnTaskChange }) => {
   const [isEditing, StateisEditing] = useState(defaultIsEditing);
 
   const OnTaskComplete = () => {
