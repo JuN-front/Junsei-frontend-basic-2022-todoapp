@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
-import StyledCheckBoxWrapper from "../../Atoms/CheckBox/index";
+import StyledCheckBoxWrapper from "../../Atoms/Checkbox/index";
 import Input from "../../Atoms/Input/index.jsx";
 import StyledEditButtonWrapper from "../../Atoms/EditButton/index";
 import COLOR from "../../../variables/color";
@@ -9,34 +9,34 @@ import TEXT from "../../../variables/texts";
 const TaskSample = ({
   defaultValue,
   defaultIsEditing,
-  onTaskChange,
-  onTaskComplete,
+  OnTaskChange,
+  OnTaskComplete,
 }) => {
   const [isEditing, StateisEditing] = useState(defaultIsEditing);
 
   const OnTaskComplete = () => {
     StateisEditing(false);
-    onTaskComplete();
+    OnTaskComplete();
   };
 
-  const onEditButtonClick = () => {
+  const OnEditButtonClick = () => {
     StateisEditing(true);
   };
 
-  const OnEditComplete = (taskName) => {
+  const OnEditComplete = (value) => {
     StateisEditing(false);
-    onTaskChange(taskName);
+    OnTaskChange(value);
   };
 
   return (
     <StyledWrapper>
-      <StyledCheckBoxWrapper onClick={OnTaskComplete}></StyledCheckBoxWrapper>
+      <StyledCheckBoxWrapper onClick={OnTaskComplete} />
       {isEditing ? (
         <Input defaultValue={defaultValue} onTaskChange={OnEditComplete} />
       ) : (
         <StyledNameAndButtonWrapper>
           <StyledTaskName>{defaultValue}</StyledTaskName>
-          <StyledEditButtonWrapper onClick={onEditButtonClick} />
+          <StyledEditButtonWrapper onClick={OnEditButtonClick} />
         </StyledNameAndButtonWrapper>
       )}
     </StyledWrapper>
