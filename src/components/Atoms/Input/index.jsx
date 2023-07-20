@@ -10,7 +10,7 @@ const InputSample = (props) => {
       inputRef.current.value = props.defaultValue;
       inputRef.current.focus();
       inputRef.current.onblur = (e) => {
-        const inputText = inputRef.current.value;
+        const inputText = e.target.value;
         props.onEditComplete(inputText);
       };
       inputRef.current.onkeypress = (e) => {
