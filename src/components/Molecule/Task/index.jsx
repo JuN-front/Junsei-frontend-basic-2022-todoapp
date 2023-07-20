@@ -27,7 +27,7 @@ const TaskSample = ({ defaultValue, defaultIsEditing, OnTaskChange }) => {
     <StyledWrapper>
       <StyledCheckBoxWrapper onClick={OnTaskComplete} />
       {isEditing ? (
-        <Input defaultValue={defaultValue} onTaskChange={OnEditComplete} />
+        <Input defaultValue={defaultValue} OnEditComplete={OnEditComplete} />
       ) : (
         <StyledNameAndButtonWrapper>
           <StyledTaskName>{defaultValue}</StyledTaskName>
