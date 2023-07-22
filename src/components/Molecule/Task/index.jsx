@@ -6,10 +6,15 @@ import StyledEditButtonWrapper from "../../Atoms/EditButton/index";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
 
-const TaskSample = ({ defaultValue, defaultIsEditing, onTaskChange }) => {
+const TaskSample = ({
+  defaultValue,
+  defaultIsEditing,
+  onTaskChange,
+  onTaskComplete,
+}) => {
   const [isEditing, setIsEditing] = useState(defaultIsEditing);
 
-  const onTaskComplete = () => {
+  const handleTaskComplete = () => {
     setIsEditing(false);
     onTaskComplete();
   };
@@ -25,7 +30,7 @@ const TaskSample = ({ defaultValue, defaultIsEditing, onTaskChange }) => {
 
   return (
     <StyledWrapper>
-      <StyledCheckBoxWrapper onClick={onTaskComplete} />
+      <StyledCheckBoxWrapper onClick={handleTaskComplete} />
       {isEditing ? (
         <Input defaultValue={defaultValue} onEditComplete={onEditComplete} />
       ) : (
