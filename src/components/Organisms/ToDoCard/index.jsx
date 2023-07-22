@@ -16,40 +16,40 @@ const TodoCard = () => {
   };
 
   const onTaskComplete = (taskIndex) => {
-    const onTaskComplete = taskList.filter((index) => {
+    const taskComplete = taskList.filter((task, index) => {
       return index !== taskIndex;
     });
-    setTaskList(onTaskComplete);
+    setTaskList(taskComplete);
   };
 
   const onTaskNameChange = (taskIndex, value) => {
-    let onTaskNameChange = [];
     if (value === "") {
-      editedTask = taskList.filter((index) => {
+      const editedTask = taskList.filter((index) => {
         return index !== taskIndex;
       });
+      setTaskList(editedTask);
     } else {
-      editedTask = taskList.map((task, index) => {
+      const editedTask = taskList.map((task, index) => {
         if (index === taskIndex) {
           task.name = value;
         }
         return task;
       });
+      setTaskList(editedTask);
     }
-    setTaskList(onTaskNameChange);
   };
 
   return (
     <StyledWrapper>
       <AddTaskButton onClick={onAddTaskButtonClick} />
       <StyledTaskList>
-        {todoStateTask.map((index) => (
+        {todoStateTask.map((task, index) => (
           <StyledItem>
             <Task
               key={index}
-              defaultValue={value}
+              defaultValue={task.name}
               defaultIsEditing={task.initializing}
-              onTaskNameChange={(value) => onTaskNameChange(index, value)}
+              onTaskChange={(value) => onTaskNameChange(index, value)}
               onTaskComplete={() => onTaskComplete(index)}
             />
           </StyledItem>
