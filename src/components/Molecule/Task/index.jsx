@@ -7,19 +7,19 @@ import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
 
 const TaskSample = ({ defaultValue, defaultIsEditing, onTaskChange }) => {
-  const [isEditing, StateisEditing] = useState(defaultIsEditing);
+  const [isEditing, SetisEditing] = useState(defaultIsEditing);
 
   const onTaskComplete = () => {
-    StateisEditing(false);
+    SetisEditing(false);
     onTaskComplete();
   };
 
   const onEditButtonClick = () => {
-    StateisEditing(true);
+    SetisEditing(true);
   };
 
   const onEditComplete = (value) => {
-    StateisEditing(false);
+    SetisEditing(false);
     onTaskChange(value);
   };
 
