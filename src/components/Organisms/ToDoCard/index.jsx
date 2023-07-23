@@ -61,7 +61,7 @@ export default TodoCard;
 const StyledWrapper = styled.div`
   padding: 20px;
   border-radius: 4px;
-  background-color: ${COLOR.DEEP_BLUE_GRAY};
+  background-color: ${COLOR.LIGHT_BLACK};
 `;
 
 const StyledTaskList = styled.div`
