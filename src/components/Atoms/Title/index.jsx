@@ -11,12 +11,11 @@ const Title = () => {
 export default Title;
 
 const StyledText = styled.div`
-  color: ${COLOR.GREEN};
+  color: ${COLOR.WHITE};
   font-family: ${FONTFAMILY.ROBOTO};
-  text: ${TEXT.L};
+  ${TEXT.L};
 
   @media (max-width: ${BREAKPOINT.MEDIUM}) {
-    text: ${TEXT.M};
-    font-family: ${FONTFAMILY.NOTO_SANS};
+    ${TEXT.M};
   }
 `;
