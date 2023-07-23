@@ -22,7 +22,7 @@ const StyledMainPage = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  @media (max-width: ${BREAKPOINT.MEDIUM}) {
+  @media (min-width: ${BREAKPOINT.MEDIUM}) {
     padding-top: 60px;
   }
 `;
