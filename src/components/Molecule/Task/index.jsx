@@ -51,7 +51,6 @@ const StyledWrapper = styled.div`
   align-items: center;
   gap: 10px;
   margin: 2px 6px;
-  width: 256px;
 `;
 
 const StyledNameAndButtonWrapper = styled.div`

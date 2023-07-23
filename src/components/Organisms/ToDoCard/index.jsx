@@ -7,10 +7,6 @@ import COLOR from "../../../variables/color";
 const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
 
-  const todoStateTask = taskList.filter((task) => {
-    return task.initializing === true;
-  });
-
   const onAddTaskButtonClick = () => {
     setTaskList((taskList) => [...taskList, { name: "", initializing: true }]);
   };
@@ -24,7 +20,7 @@ const TodoCard = () => {
 
   const onTaskNameChange = (taskIndex, value) => {
     if (value === "") {
-      const editedTask = taskList.filter((index) => {
+      const editedTask = taskList.filter((task, index) => {
         return index !== taskIndex;
       });
       setTaskList(editedTask);
@@ -32,6 +28,7 @@ const TodoCard = () => {
       const editedTask = taskList.map((task, index) => {
         if (index === taskIndex) {
           task.name = value;
+          task.initializing = false;
         }
         return task;
       });
@@ -43,7 +40,7 @@ const TodoCard = () => {
     <StyledWrapper>
       <AddTaskButton onClick={onAddTaskButtonClick} />
       <StyledTaskList>
-        {todoStateTask.map((task, index) => (
+        {taskList.map((task, index) => (
           <StyledItem>
             <Task
               key={index}
