@@ -9,17 +9,17 @@ const TodoCard = () => {
 
   //データ取り出し用の新しい関数
   useEffect(() => {
-    const AcquiredData = localStorage.getItem("taskList");
-    if (AcquiredData !== null) {
-      const getTaskList = JSON.parse(AcquiredData);
-      setTaskList(getTaskList);
+    const acquiredData = localStorage.getItem("taskList");
+    if (acquiredData !== null) {
+      const acquiredTaskList = JSON.parse(acquiredData);
+      setTaskList(acquiredTaskList);
     }
   }, []);
 
   //データ保存用の新しい関数
   useEffect(() => {
-    const getData = JSON.stringify(taskList);
-    localStorage.setItem("taskList", getData);
+    const stringData = JSON.stringify(taskList);
+    localStorage.setItem("taskList", stringData);
   }, [taskList]);
 
   //追加ボタン押したときのやつ
