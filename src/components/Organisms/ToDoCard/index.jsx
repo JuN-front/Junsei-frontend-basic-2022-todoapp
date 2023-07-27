@@ -7,7 +7,14 @@ import COLOR from "../../../variables/color";
 const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
 
-  const [savingAction, setSavingAction] = useState(false);
+  //データ取り出し用の新しい関数
+  useEffect(() => {
+    const getData = localStorage.getItem("taskList");
+    if (getData !== null) {
+      const getTaskList = JSON.parse(getData);
+      setTaskList(getTaskList);
+    }
+  }, []);
 
   //データ保存用の新しい関数
   useEffect(() => {
@@ -15,21 +22,12 @@ const TodoCard = () => {
     localStorage.setItem("taskList", getData);
   }, [taskList]);
 
-  //データ取り出し用の新しい関数
-  useEffect(() => {
-    const SavedData = localStorage.getItem("taskList");
-    if (SavedData !== null) {
-      const firstTaskList = JSON.parse(SavedData);
-      setTaskList(firstTaskList);
-    }
-    setSavingAction(true);
-  }, []);
-
+  //追加ボタン押したときのやつ
   const onAddTaskButtonClick = () => {
     setTaskList((taskList) => [...taskList, { name: "", initializing: true }]);
-    setSavingAction(false);
   };
 
+  //チェックボタン押して消すとき
   const onTaskComplete = (taskIndex) => {
     const taskComplete = taskList.map((task, index) => {
       if (index === taskIndex) {
@@ -40,6 +38,7 @@ const TodoCard = () => {
     setTaskList(taskComplete);
   };
 
+  //編集中の時の関数
   const onTaskNameChange = (taskIndex, value) => {
     if (value === "") {
       const editedTask = taskList.filter((task, index) => {
@@ -55,7 +54,6 @@ const TodoCard = () => {
         return task;
       });
       setTaskList(editedTask);
-      setSavingAction(false);
     }
   };
 
@@ -68,7 +66,7 @@ const TodoCard = () => {
             <Task
               key={index}
               defaultValue={task.name}
-              defaultIsEditing={!savingAction}
+              defaultIsEditing={task.initializing}
               onTaskChange={(value) => onTaskNameChange(index, value)}
               onTaskComplete={() => onTaskComplete(index)}
             />
