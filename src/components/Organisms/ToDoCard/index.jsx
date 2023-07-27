@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import AddTaskButton from "../../Atoms/AddTaskButton/index";
 import Task from "../../Molecule/Task/index";
@@ -7,13 +7,35 @@ import COLOR from "../../../variables/color";
 const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
 
+  const [savingAction, setSavingAction] = useState(false);
+
+  //データ保存用の新しい関数
+  useEffect(() => {
+    const getData = JSON.stringify(taskList);
+    localStorage.setItem("taskList", getData);
+  }, [taskList]);
+
+  //データ取り出し用の新しい関数
+  useEffect(() => {
+    const SavedData = localStorage.getItem("taskList");
+    if (SavedData !== null) {
+      const firstTaskList = JSON.parse(SavedData);
+      setTaskList(firstTaskList);
+    }
+    setSavingAction(true);
+  }, []);
+
   const onAddTaskButtonClick = () => {
     setTaskList((taskList) => [...taskList, { name: "", initializing: true }]);
+    setSavingAction(false);
   };
 
   const onTaskComplete = (taskIndex) => {
-    const taskComplete = taskList.filter((task, index) => {
-      return index !== taskIndex;
+    const taskComplete = taskList.map((task, index) => {
+      if (index === taskIndex) {
+        task.state = "DONE";
+      }
+      return task;
     });
     setTaskList(taskComplete);
   };
@@ -33,6 +55,7 @@ const TodoCard = () => {
         return task;
       });
       setTaskList(editedTask);
+      setSavingAction(false);
     }
   };
 
@@ -45,7 +68,7 @@ const TodoCard = () => {
             <Task
               key={index}
               defaultValue={task.name}
-              defaultIsEditing={task.initializing}
+              defaultIsEditing={!savingAction}
               onTaskChange={(value) => onTaskNameChange(index, value)}
               onTaskComplete={() => onTaskComplete(index)}
             />
