@@ -9,9 +9,9 @@ const TodoCard = () => {
 
   //データ取り出し用の新しい関数
   useEffect(() => {
-    const getData = localStorage.getItem("taskList");
-    if (getData !== null) {
-      const getTaskList = JSON.parse(getData);
+    const AcquiredData = localStorage.getItem("taskList");
+    if (AcquiredData !== null) {
+      const getTaskList = JSON.parse(AcquiredData);
       setTaskList(getTaskList);
     }
   }, []);
