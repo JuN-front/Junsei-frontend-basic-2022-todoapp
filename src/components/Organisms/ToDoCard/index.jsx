@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 import styled from "styled-components";
 import AddTaskButton from "../../Atoms/AddTaskButton/index";
 import Task from "../../Molecule/Task/index";
@@ -6,6 +7,7 @@ import COLOR from "../../../variables/color";
 
 const TodoCard = () => {
   const [taskList, setTaskList] = useState([]);
+  const AlertHandlerContext = useAlertHandlerContext();
 
   //データ取り出し用の新しい関数
   useEffect(() => {
@@ -44,6 +46,7 @@ const TodoCard = () => {
       const editedTask = taskList.filter((task, index) => {
         return index !== taskIndex;
       });
+      AlertHandlerContext.setAlert("タスクの名前を設定してください");
       setTaskList(editedTask);
     } else {
       const editedTask = taskList.map((task, index) => {
