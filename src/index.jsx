@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import MainPage from "./components/Pages/MainPage";
 import "./style.css";
 import AlertManager from "./components/Organisms/AlertManager/index";
-import { Alert_Handler } from "./contexts/alert_handler";
+import { AlertHandlerProvider } from "./contexts/alert_handler";
 
 ReactDOM.render(
-  <Alert_Handler>
+  <AlertHandlerProvider>
     <AlertManager />
     <MainPage />
-  </Alert_Handler>,
+  </AlertHandlerProvider>,
   document.getElementById("app")
 );

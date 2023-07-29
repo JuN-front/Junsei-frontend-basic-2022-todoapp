@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 
 const AlertHandlerContext = createContext();
 
-export const Alert_Handler = ({ children }) => {
+export const AlertHandlerProvider = ({ children }) => {
   const [alertState, setAlertState] = useState({
     visible: false,
     errorText: "",
