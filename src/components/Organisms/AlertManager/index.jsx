@@ -1,4 +1,5 @@
 import { useAlertHandlerContext } from "../../../contexts/alert_handler";
+import Alert from "../../Atoms/Alert/index";
 
 const AlertManager = () => {
   const AlertHandlerContext = useAlertHandlerContext();
