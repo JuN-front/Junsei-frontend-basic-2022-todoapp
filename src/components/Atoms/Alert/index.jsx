@@ -4,11 +4,11 @@ import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
 import BREAKPOINT from "../../../variables/breakpoint";
 
-const Alert = ({ visible, SText }) => {
+const Alert = ({ visible, errorText }) => {
   return (
     <StyledAlert>
       <StyledAlertText className={visible ? "fadeIn" : "fadeOut"}>
-        {SText}
+        {errorText}
       </StyledAlertText>
     </StyledAlert>
   );
