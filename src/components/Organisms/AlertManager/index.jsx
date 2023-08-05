@@ -12,7 +12,6 @@ const AlertManager = () => {
   }, [AlertHandlerContext]);
 
   // //AlertHandlerContextから直接値が取り出せる
-  console.log(AlertHandlerContext.visible);
   return (
     <Alert
       errorText={AlertHandlerContext.errorText}
